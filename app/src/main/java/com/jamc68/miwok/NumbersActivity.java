@@ -1,10 +1,8 @@
 package com.jamc68.miwok;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.solver.SolverVariable;
 
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -14,30 +12,32 @@ public class NumbersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.word_list);
 
-        // Add words
-        ArrayList<Word> words = new ArrayList<>();
+        // Create a list of words
+        ArrayList<Word> words = new ArrayList<Word>();
+        words.add(new Word("one", "lutti", R.drawable.number_one));
+        words.add(new Word("two", "otiiko", R.drawable.number_two));
+        words.add(new Word("three", "tolookosu", R.drawable.number_three));
+        words.add(new Word("four", "oyyisa", R.drawable.number_four));
+        words.add(new Word("five", "massokka", R.drawable.number_five));
+        words.add(new Word("six", "temmokka", R.drawable.number_six));
+        words.add(new Word("seven", "kenekaku", R.drawable.number_seven));
+        words.add(new Word("eight", "kawinta", R.drawable.number_eight));
+        words.add(new Word("nine", "wo’e", R.drawable.number_nine));
+        words.add(new Word("ten", "na’aacha", R.drawable.number_ten));
 
-        words.add(new Word("lutti","one"));
-        words.add(new Word("two", "otiiko"));
-        words.add(new Word("three", "tolookosu"));
-        words.add(new Word("four", "oyyisa"));
-        words.add(new Word("five", "massokka"));
-        words.add(new Word("six", "temmokka"));
-        words.add(new Word("seven", "kenekaku"));
-        words.add(new Word("eight", "kawinta"));
-        words.add(new Word("nine", "wo’e"));
-        words.add(new Word("ten", "na’aacha"));
-        // The ArrayAdapter requires a declaration of the type of the item to be converted
-        // to a View (a String in this case) and then accepts three arguments:
-        // context (activity instance), XML item layout, and the array of data.
-        // The getView() method of the original ArrayAdapter must be overriden so that
-        // we can use our custom object 'words'
-        WordAdapter itemsAdapter = new WordAdapter( this, words);
-        //Now, we just need to connect this adapter to a ListView to be populated:
+        // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
+        // adapter knows how to create list items for each item in the list.
+        WordAdapter adapter = new WordAdapter(this, words);
+
+        // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
+        // There should be a {@link ListView} with the view ID called list, which is declared in the
+        // word_list.xml layout file.
         ListView listView = (ListView) findViewById(R.id.list);
-        listView.setAdapter(itemsAdapter);
 
+        // Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
+        // {@link ListView} will display list items for each {@link Word} in the list.
+        listView.setAdapter(adapter);
     }
 }
