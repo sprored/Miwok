@@ -38,6 +38,7 @@ public class NumbersActivity extends AppCompatActivity {
 
         // Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
         // {@link ListView} will display list items for each {@link Word} in the list.
+        listView.setBackgroundColor(getResources().getColor(R.color.category_numbers));
         listView.setAdapter(adapter);
     }
 }
