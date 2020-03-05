@@ -1,16 +1,8 @@
 package com.jamc68.miwok;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
-import java.util.ArrayList;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class NumbersActivity extends AppCompatActivity {
     @Override
