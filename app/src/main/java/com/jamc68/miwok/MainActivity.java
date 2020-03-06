@@ -3,11 +3,8 @@ package com.jamc68.miwok;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
 
