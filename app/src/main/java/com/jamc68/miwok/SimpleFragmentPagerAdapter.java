@@ -1,6 +1,9 @@
 
 package com.jamc68.miwok;
 
+import android.app.Activity;
+import android.content.res.Resources;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -13,26 +16,27 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
+
     public SimpleFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
     }
+    final int PAGE_COUNT = 4;
 
-/*
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return String.valueOf(R.string.category_numbers);
+                return "Numbers";
             case 1:
-                return String.valueOf(R.string.category_family);
+                return "Family";
             case 2:
-                return String.valueOf(R.string.category_colors);
+                return "Colors";
             default:
-                return String.valueOf(R.string.category_phrases);
+                return "Phrases";
         }
     }
-*/
+
 
     @Override
     public Fragment getItem(int position) {
@@ -49,7 +53,7 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return PAGE_COUNT;
     }
 }
 
